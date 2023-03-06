@@ -1,12 +1,13 @@
 import React, {useState} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import AuthService from "../services/UserService";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
-    const API_URL = "http://localhost:8080/api/auth/";
+    const API_URL = "http://localhost:3013/api/auth/";
     const handleInputUsername = (event) => {
         setUsername(event.target.value);
     };
@@ -16,16 +17,14 @@ const Login = () => {
     const verify = () => {
         console.log(username);
         console.log(password);
-        axios.post(API_URL + "login",
-            {username: username, password: password})
-            .then((response) => {
-                    console.log(response.data)
-                    alert("se ingreso correctamente")
-                    navigate("/principal")
-                    window.location.reload();
-                }
-            )
-            .catch(error => console.log(error));
+        AuthService.login(username, password)
+            .then(() => {
+                console.log(AuthService.getCurrentUser())
+                navigate("/principal");
+                window.location.reload();
+            }, (error) => {
+                console.log(error.message)
+            })
     };
     return (
         <div className="container mt-5">
