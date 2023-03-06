@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min"
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Login from "./home/login";
-import Inicio from "./home/Inicio";
+import Home from "./home/Home";
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path={"/"} element={<Login/>}/>
-                    <Route path={"/principal"} element={<Inicio/>}/>
+                    <Route path={"/principal"} element={<Home/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
