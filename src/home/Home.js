@@ -19,7 +19,6 @@ const Home = () => {
     const totalPages = currentPage === Math.ceil(data.length / itemsPerPage);
 
     const currentElements = data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-    const API_URL = "http://localhost:3013/api/auth/";
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     }
@@ -54,13 +53,12 @@ const Home = () => {
 
     async function handleExportClick() {
         try {
-
             const url = "http://localhost:3013/api/tiempo/exportCSV";
             const rpta = await axios.get(url, {responseType: "blob"});
             const archivo = new Blob([rpta.data], {type: "text/csv;charset=utf-8;"});
             const link = document.createElement("a");
             link.href = window.URL.createObjectURL(archivo);
-            link.download = "data.csv";
+            link.download = "tiempos.csv";
             link.style.display = "none";
             document.body.appendChild(link);
             link.click();
@@ -69,7 +67,6 @@ const Home = () => {
             console.log(err.error())
         }
     }
-
 
     const logout = () => {
         AuthService.logout();
@@ -136,7 +133,7 @@ const Home = () => {
                         <tbody>
                         {
                             currentElements.map((t) => (
-                                <tr>
+                                <tr key={t.codigo}>
                                     <td><b>{t.codigo}</b></td>
                                     <td>{t.clave}</td>
                                     <td>{t.fecha}</td>
