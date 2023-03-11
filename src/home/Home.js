@@ -53,7 +53,7 @@ const Home = () => {
 
     async function handleExportClick() {
         try {
-            const url = "http://localhost:3013/api/tiempo/exportCSV";
+            const url = "https://react-neuronal.herokuapp.com/api/tiempo/exportCSV";
             const rpta = await axios.get(url, {responseType: "blob"});
             const archivo = new Blob([rpta.data], {type: "text/csv;charset=utf-8;"});
             const link = document.createElement("a");

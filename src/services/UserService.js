@@ -1,6 +1,6 @@
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
-const API_URL = "http://localhost:3013/api/auth/";
+const API_URL = "https://react-neuronal.herokuapp.com/api/auth/";
 const coeficiente = -9.60175056;
 const intercepto = 0.18139954;
 const login = (username, password, tiempo2) => {
