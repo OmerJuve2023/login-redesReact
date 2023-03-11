@@ -82,11 +82,11 @@ const Home = () => {
     return (
         <div>
             <div>
-                <nav className="navbar navbar-light bg-light">
-                    <div className={"container-fluid"}>
-                        <a className={"navbar-brand"}>Redes Neuronales</a>
+                <nav className="navbar navbar-light nav-wrapper flex-row bg-light">
+                    <div className={"container"}>
+                        <a className={"navbar-brand"}><h3><b>Redes Neuronales</b></h3></a>
                         <form className={"d-flex"}>
-                            <button className={"btn btn-outline-warning text-dark"} onClick={logout}>Cerrar Sesión
+                            <button className={"btn gradient-custom-2 text-white"} onClick={logout}>Cerrar Sesión
                             </button>
                         </form>
                     </div>
@@ -175,8 +175,8 @@ const Home = () => {
                 </div>
             </div>
         </div>
-    )
-        ;
+
+    );
 }
 
 export default Home;
