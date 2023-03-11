@@ -74,7 +74,7 @@ const Home = () => {
     };
 
     useEffect(() => {
-        axios.get("http://localhost:3013/api/tiempo")
+        axios.get("https://react-neuronal.herokuapp.com/api/tiempo")
             .then(response => setData(response.data))
             .catch(error => console.log(error));
     }, [])
