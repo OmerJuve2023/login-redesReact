@@ -1,5 +1,6 @@
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+
 const API_URL = "http://localhost:3013/api/auth/";
 const coeficiente = -9.60175056;
 const intercepto = 0.18139954;
@@ -23,6 +24,22 @@ const login = (username, password, tiempo2) => {
             }
         });
 };
+
+const register = (username, email, password, authority) => {
+    return axios.post(API_URL + "signup", {
+        username: username,
+        email: email,
+        password: password,
+        authority: authority
+    })
+        .then((response) => {
+            if (response.data.username) {
+                localStorage.setItem("user", JSON.stringify(response.data));
+            }
+            return response.data;
+        });
+};
+
 const logout = () => {
     localStorage.removeItem("user");
     return axios.post(API_URL + "logout").then((response) => {
@@ -38,6 +55,7 @@ const AuthService = {
     login,
     logout,
     getCurrentUser,
+    register,
 }
 
 export default AuthService;

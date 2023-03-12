@@ -76,13 +76,14 @@ const Login = () => {
                                                        placeholder={"ingrese dni"}/>
                                             </div>
                                             <div class="text-center pt-1 mb-5 pb-1">
-                                                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                                                <button class="btn text-white gradient-custom-2 w-100"
                                                         type="button"
                                                         onClick={verify}
                                                 >Login
                                                 </button>
                                             </div>
                                         </form>
+                                        <a className={"d-flex text-muted a"} href="/Register"><h6>Crear Cuenta Usuario</h6></a>
                                     </div>
                                 </div>
                                 <div className="col-lg-6 d-flex align-items-center gradient-custom-2">

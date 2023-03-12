@@ -26,10 +26,13 @@
         border-bottom-right-radius: .3rem;
     }
 }
-
+.a{
+    text-decoration: none;
+}
 .txtSombra {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 .boxSombra{
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
 }
+

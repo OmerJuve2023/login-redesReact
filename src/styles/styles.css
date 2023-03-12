@@ -1,0 +1,103 @@
+/*body{
+    background: #fccb90;
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}*/
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+.boxSombra{
+    box-shadow: 2px 2px 5px rgba(173, 163, 163, 0.35);
+}
+
+.card{
+    background-color:#fff;
+    border:none;
+    height:500px;
+    overflow:hidden;
+}
+
+.input-field{
+    position:relative;
+    margin-top:5px;
+}
+
+.input-field input{
+    height:50px;
+    outline:none !important;
+    border:2px solid #eaeaea;
+
+}
+
+.input-field input:focus{
+    box-shadow:none;
+    outline:none !important;
+    border-color: #ee7724;
+}
+
+.input-field label{
+    position:absolute;
+    top:10px;
+    left:6px;
+    transition:all 0.3s;
+    color: #b44593;
+    padding:0 10px;
+    border-radius:20px;
+
+}
+
+.input-field input:focus+label,
+.input-field input:valid+label
+{
+    position:absolute;
+    top:-25px;
+    font-size:20px;
+
+}
+
+.signup-button{
+    height:50px;
+    font-size:19px;
+    text-transform:uppercase;
+}
+
+.right-side{
+
+    position:relative;
+
+}
+
+
+.right-side-content{
+    background-color: #e79331;
+    height:500px;
+    width:100%;
+    padding:10px;
+    position:relative;
+}
+
+
+.right-side-content .content{
+    position:absolute;
+    top:50%;
+    left:0;
+    padding:0 40px;
+}
+
+
+
+.content{
+    display:flex;
+    color:#fff;
+    justify-content:center;
+    align-items:center;
+}
+
