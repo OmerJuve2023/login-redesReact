@@ -2,6 +2,10 @@
   "name": "login-react",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -16,9 +20,6 @@
     "react-bootstrap": "^2.7.2",
     "csv-stringify": "^6.3.0",
     "date-fns": "^2.29.3"
-  },
-  "engines": {
-    "node": ">=18"
   },
   "scripts": {
     "start": "set PORT=3000 && react-scripts start",
