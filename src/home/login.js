@@ -83,6 +83,7 @@ const Login = () => {
                                                 </button>
                                             </div>
                                         </form>
+                                        <a className={"d-flex text-muted a"} href="/Register"><h6>Crear Cuenta Usuario</h6></a>
                                     </div>
                                 </div>
                                 <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
