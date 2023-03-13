@@ -1,5 +1,6 @@
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+
 const API_URL = "https://react-neuronal.herokuapp.com/api/auth/";
 const coeficiente = -9.60175056;
 const intercepto = 0.18139954;
@@ -21,6 +22,19 @@ const login = (username, password, tiempo2) => {
                 alert("el usuario es impostor");
                 useNavigate("/");
             }
+        });
+};
+const register = (username, email, password) => {
+    return axios.post(API_URL + "signup", {
+        username: username,
+        email: email,
+        password: password,
+    })
+        .then((response) => {
+            if (response.data.username) {
+                localStorage.setItem("user", JSON.stringify(response.data));
+            }
+            return response.data;
         });
 };
 const logout = () => {
