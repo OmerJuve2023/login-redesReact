@@ -33,7 +33,7 @@ const Home = () => {
 
     const saveTime = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:3013/api/tiempo", {
+        await axios.post("https://react-neuronal.herokuapp.com/api/tiempo", {
             t1: timeBeats[1],
             t2: timeBeats[2],
             t3: timeBeats[3],
