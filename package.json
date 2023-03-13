@@ -17,6 +17,9 @@
     "csv-stringify": "^6.3.0",
     "date-fns": "^2.29.3"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "set PORT=3000 && react-scripts start",
     "build": "react-scripts build",
