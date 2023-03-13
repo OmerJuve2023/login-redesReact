@@ -30,7 +30,7 @@ const Login = () => {
         AuthService.login(username, password, timeBeats[2])
             .then(() => {
                 console.log(AuthService.getCurrentUser())
-                navigate("/principal");
+                navigate("/home");
                 window.location.reload();
             }, (error) => {
                 console.log(error.message);
@@ -75,8 +75,8 @@ const Login = () => {
                                                        minLength={8}
                                                        placeholder={"ingrese dni"}/>
                                             </div>
-                                            <div class="text-center pt-1 mb-5 pb-1">
-                                                <button class="btn text-white gradient-custom-2 w-100"
+                                            <div className="text-center pt-1 mb-5 pb-1">
+                                                <button className="btn text-white gradient-custom-2 w-100"
                                                         type="button"
                                                         onClick={verify}
                                                 >Login

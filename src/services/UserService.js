@@ -29,8 +29,7 @@ const register = (username, email, password, authority) => {
     return axios.post(API_URL + "signup", {
         username: username,
         email: email,
-        password: password,
-        authority: authority
+        password: password
     })
         .then((response) => {
             if (response.data.username) {

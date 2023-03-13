@@ -1,7 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import "styles/styles.css";
+import AuthService from "../services/UserService";
+import {useNavigate} from "react-router-dom";
 
 const Register = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [rol, setRol] = useState("");
+    const [email, setEmail] = useState("");
+    const navigate = useNavigate();
+    const handleInputUsername = (event) => {
+        setUsername(event.target.value);
+    }
+    const handleInputPassword = (event) => {
+        setPassword(event.target.value);
+    }
+    const handleInputEmail = (event) => {
+        setEmail(event.target.value);
+    }
+    const handleInputRol = (event) => {
+        setRol(event.target.value);
+    }
+    const create = () => {
+        AuthService.register(username, email, password, rol)
+            .then(() => {
+                alert("se registro correctamente");
+                navigate("/");
+            }, (error) => {
+                alert("error inesperado");
+                console.log(error.message);
+            })
+    };
+
     return (
         <div className="container">
             <br/><br/>
@@ -15,7 +45,10 @@ const Register = () => {
                                         <div className="input-field">
                                             <input className="form-control"
                                                    id="username"
-                                                   required/>
+                                                   required
+                                                   value={username}
+                                                   onChange={handleInputUsername}
+                                            />
                                             <label htmlFor="username">Usuario</label>
                                         </div>
                                     </div>
@@ -23,7 +56,10 @@ const Register = () => {
                                         <div className="input-field">
                                             <input className="form-control"
                                                    id="rol"
-                                                   required/>
+                                                   required
+                                                   value={rol}
+                                                   onChange={handleInputRol}
+                                            />
                                             <label htmlFor="rol">Rol</label></div>
                                     </div>
                                 </div>
@@ -33,7 +69,11 @@ const Register = () => {
                                         <div className="input-field">
                                             <input className="form-control"
                                                    id="email"
-                                                   required/>
+                                                   required
+                                                   value={email}
+                                                   onChange={handleInputEmail}
+                                                   type={"email"}
+                                            />
                                             <label htmlFor="email">Email</label>
                                         </div>
                                     </div>
@@ -44,7 +84,13 @@ const Register = () => {
                                         <div className="input-field">
                                             <input className="form-control"
                                                    id="password"
-                                                   required/>
+                                                   required
+                                                   value={password}
+                                                   onChange={handleInputPassword}
+                                                   maxLength={8}
+                                                   minLength={8}
+                                                   type={"password"}
+                                            />
                                             <label htmlFor={"input4"}>Contraseña</label>
                                         </div>
                                     </div>
@@ -53,12 +99,14 @@ const Register = () => {
                                 <div className="row mt-2">
                                     <div className="col-md-12">
                                         <button
-                                            className="btn text-white gradient-custom-2 w-100 signup-button">Registrar
+                                            className="btn text-white gradient-custom-2 w-100 signup-button"
+                                            onClick={create}
+                                            type={"button"}>Registrar
                                         </button>
                                     </div>
                                 </div>
                                 <div className="member mt-1"><span>ya tienes una cuenta?</span> <a
-                                    className="text-decoration-none" href="/">Iniciar Sesión</a></div>
+                                    className="text-decoration-none text-muted" href="/">Iniciar Sesión</a></div>
                             </div>
                         </div>
                     </div>
